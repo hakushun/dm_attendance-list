@@ -1,0 +1,25 @@
+.Arrow::after {
+	border: 8px solid transparent;
+	border-top: 8px solid #555;
+	content: "";
+	height: 0;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(calc(-50% + 4px));
+	width: 0;
+}
+
+.Arrow.IsOpened::after {
+	border-bottom: 8px solid #555;
+	border-top: none;
+	transform: translateY(-50%);
+}
+
+.Accordion {
+	display: none;
+}
+
+.Accordion.IsOpened {
+	display: block;
+}
