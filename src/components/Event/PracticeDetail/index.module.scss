@@ -1,0 +1,30 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .term {
+    font-weight: bold;
+    border-bottom: 1px solid mixin.$mainTextColor;
+  }
+
+  .definition {
+    white-space: pre-wrap;
+  }
+}

@@ -1,0 +1,34 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  background-color: mixin.$headerBgColor;
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .title {
+    padding: 5px 0;
+    font-size: mixin.rem(30);
+    font-weight: bold;
+    color: mixin.$mainTextColor;
+
+    @include mixin.mq() {
+      font-size: mixin.rem(22);
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .list {
+    display: flex;
+    gap: 10px;
+  }
+}

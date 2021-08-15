@@ -1,0 +1,15 @@
+@use './mixin' as mixin;
+
+html {
+  font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+  color: mixin.$mainTextColor;
+  background-color: mixin.$bgColor;
+}
+
+.highlight {
+  background-color: mixin.$whiteColor;
+}
+
+.isHidden {
+  display: none;
+}

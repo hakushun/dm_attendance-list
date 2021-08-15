@@ -1,0 +1,52 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .subtitle {
+    font-size: mixin.rem(18);
+    font-weight: bold;
+  }
+
+  .wrapper {
+    max-width: min(1000px, 100%);
+    max-height: 60vh;
+    padding: 5px;
+    overflow: auto;
+  }
+
+  .table {
+    position: relative;
+    font-size: mixin.rem(14);
+  }
+
+  .thead {
+    position: sticky;
+    top: 0;
+  }
+
+  .cell {
+    min-width: 90px;
+    text-align: center;
+
+    &.head {
+      padding: 3px 4px;
+      font-weight: bold;
+      background-color: mixin.$primaryColor;
+      border: 1px solid mixin.$primaryColor;
+    }
+
+    &.body {
+      position: relative;
+      padding: 10px 4px;
+      border: 1px solid mixin.$mainTextColor;
+    }
+
+    &.medium {
+      min-width: 120px;
+    }
+  }
+}

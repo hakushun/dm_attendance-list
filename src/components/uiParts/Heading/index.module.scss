@@ -1,0 +1,17 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  font-size: mixin.rem(20);
+  font-weight: bold;
+  text-align: center;
+
+  @include mixin.mq() {
+    font-size: mixin.rem(18);
+  }
+
+  > span {
+    display: inline-block;
+    padding: 0 8px;
+    border-bottom: 3px solid mixin.$headingBorderColor;
+  }
+}

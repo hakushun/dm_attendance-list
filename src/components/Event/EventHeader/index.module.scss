@@ -1,0 +1,10 @@
+@use '../../../styles/mixin' as mixin;
+
+.wrapper {
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.detail {
+  white-space: pre-wrap;
+}

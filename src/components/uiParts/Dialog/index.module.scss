@@ -1,0 +1,13 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .title {
+    font-size: mixin.rem(18);
+    font-weight: bold;
+  }
+}

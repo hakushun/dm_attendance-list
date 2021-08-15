@@ -1,0 +1,45 @@
+@use '../../../styles/mixin' as mixin;
+
+.wrapper {
+  margin-top: 20px;
+}
+
+.tablist {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.tab {
+  padding: 10px 15px;
+  font-weight: bold;
+  color: mixin.$whiteColor;
+  background-color: mixin.$disabledColor;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s;
+
+  &.selected {
+    color: mixin.$mainTextColor;
+    background-color: mixin.$primaryColor;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.1);
+  }
+
+  @include mixin.mq() {
+    padding: 10px 10px;
+    font-size: mixin.rem(14);
+  }
+}
+
+.tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+  background-color: darken(mixin.$bgColor, 10%);
+  border-radius: 3px;
+}

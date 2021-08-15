@@ -1,0 +1,58 @@
+@use '../../../styles/mixin' as mixin;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  > fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    border: none;
+
+    > legend {
+      margin: 0 auto;
+    }
+  }
+
+  .annotation {
+    margin-top: 10px;
+    font-size: mixin.rem(14);
+    text-align: center;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .label {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .input {
+    min-width: 230px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+}

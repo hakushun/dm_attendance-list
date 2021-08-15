@@ -1,0 +1,14 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  z-index: mixin.$z_modal;
+  width: max(40%, 350px);
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 20px 16px;
+  overflow-y: auto;
+  background-color: mixin.$bgColor;
+  border: 3px solid mixin.$primaryColor;
+  border-radius: 5px;
+  outline: none;
+}

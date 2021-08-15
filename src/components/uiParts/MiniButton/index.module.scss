@@ -1,0 +1,28 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  padding: 0 3px;
+  font-size: mixin.rem(12);
+  color: mixin.$whiteColor;
+  background-color: mixin.$quaternaryColor;
+  border: 2px solid mixin.$quaternaryColor;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5);
+
+  &:hover,
+  &:focus-visible {
+    color: mixin.$quaternaryColor;
+    background-color: mixin.$whiteColor;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: mixin.$disabledColor;
+    border: 3px solid mixin.$disabledColor;
+  }
+}

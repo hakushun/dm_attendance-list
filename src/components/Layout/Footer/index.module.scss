@@ -1,0 +1,7 @@
+@use '../../../styles/mixin' as mixin;
+
+.root {
+  padding: 8px 0;
+  text-align: center;
+  background-color: mixin.$footerBgColor;
+}

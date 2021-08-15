@@ -1,0 +1,61 @@
+@use '../../styles/mixin' as mixin;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+
+  > fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+
+    > legend {
+      margin: 0 auto;
+    }
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .label {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 30px;
+}

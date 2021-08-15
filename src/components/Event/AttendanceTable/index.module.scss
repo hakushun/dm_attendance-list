@@ -1,0 +1,123 @@
+@use '../../../styles/mixin' as mixin;
+
+.remarks {
+  margin-top: 20px;
+  font-size: mixin.rem(14);
+  text-align: center;
+}
+
+.wrapper {
+  max-width: min(1000px, 100%);
+  max-height: 60vh;
+  padding: 5px;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.table {
+  position: relative;
+  font-size: mixin.rem(14);
+
+  .thead {
+    position: sticky;
+    top: 0;
+  }
+
+  .select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid mixin.$mainTextColor;
+    border-radius: 3px;
+  }
+
+  .cell {
+    min-width: 120px;
+    text-align: center;
+
+    &.head {
+      padding: 3px 4px;
+      font-weight: bold;
+      background-color: mixin.$primaryColor;
+      border: 1px solid mixin.$primaryColor;
+    }
+
+    &.body {
+      position: relative;
+      padding: 10px 4px;
+      border: 1px solid mixin.$mainTextColor;
+    }
+
+    &.narrow {
+      min-width: 80px;
+    }
+
+    &.medium {
+      min-width: 140px;
+    }
+
+    &.wide {
+      min-width: 250px;
+    }
+
+    &.button {
+      padding: 5px 0;
+    }
+  }
+
+  .remark {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: max-content;
+    min-width: 135px;
+    max-width: 300px;
+    padding: 5px;
+    background-color: mixin.$ternaryColor;
+    border-radius: 3px;
+
+    &::after {
+      position: absolute;
+      bottom: -8px;
+      left: 60px;
+      width: 15px;
+      height: 15px;
+      content: '';
+      background-color: mixin.$ternaryColor;
+      border-bottom: 3px solid mixin.$ternaryColor;
+      border-bottom: 3px solid mixin.$ternaryColor;
+      transform: rotate(45deg);
+    }
+
+    &[data-is-shown='ture'] {
+      display: block;
+    }
+
+    &[data-is-shown='false'] {
+      display: none;
+    }
+  }
+
+  .actionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action {
+    font-weight: bold;
+    color: mixin.$clickableColor;
+    text-decoration: underline;
+    border: 2px solid transparent;
+
+    &.textSmall {
+      font-size: mixin.rem(12);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: darken(mixin.$bgColor, 20%);
+      border: 2px solid mixin.$mainTextColor;
+      border-radius: 3px;
+    }
+  }
+}

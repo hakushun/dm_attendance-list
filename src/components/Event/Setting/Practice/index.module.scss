@@ -1,0 +1,81 @@
+@use '../../../../styles/mixin' as mixin;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+
+    > legend {
+      margin: 0 auto;
+      font-size: mixin.rem(18);
+      font-weight: bold;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .summary {
+    padding: 5px 5px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background-color: darken(mixin.$bgColor, 30%);
+      border-radius: 3px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: darken(mixin.$bgColor, 20%);
+    border-radius: 3px;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .label {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .input {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid mixin.$mainTextColor;
+    border-radius: 3px;
+
+    &.textarea {
+      min-height: 150px;
+      max-height: 300px;
+      resize: vertical;
+    }
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+}

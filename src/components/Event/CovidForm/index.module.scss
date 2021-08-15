@@ -1,0 +1,80 @@
+@use '../../../styles/mixin' as mixin;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 350px;
+
+  .fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+
+    > legend {
+      margin: 0 auto;
+    }
+  }
+
+  .remark {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .select {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid mixin.$mainTextColor;
+    border-radius: 3px;
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+
+  .question {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .label {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .radiogroup {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .radioWrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .radio {
+    cursor: pointer;
+  }
+
+  .radioLabel {
+    cursor: pointer;
+  }
+}

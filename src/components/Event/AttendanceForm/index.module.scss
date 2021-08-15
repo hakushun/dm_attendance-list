@@ -1,0 +1,135 @@
+@use '../../../styles/mixin' as mixin;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 350px;
+
+  .fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+
+    > legend {
+      margin: 0 auto;
+    }
+  }
+
+  .remark {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .select {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid mixin.$mainTextColor;
+    border-radius: 3px;
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .label {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .input {
+    padding: 5px 8px;
+    border: 1px solid mixin.$mainTextColor;
+    border-radius: 3px;
+
+    &.text {
+      width: 100%;
+    }
+
+    &.textarea {
+      width: 100%;
+      min-height: 50px;
+      max-height: 500px;
+      resize: vertical;
+    }
+
+    &:invalid {
+      background-color: lighten(mixin.$vividColor, 40%);
+      border: 1px solid mixin.$vividColor;
+    }
+  }
+
+  .radiogroup {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .radio {
+    min-width: 40px;
+    min-height: 35px;
+    cursor: pointer;
+    background-color: lighten(mixin.$ternaryColor, 30%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    border: 2px solid lighten(mixin.$ternaryColor, 30%);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5);
+
+    &.circle {
+      background-image: url('/icon/circle.svg');
+    }
+
+    &.triangle {
+      background-image: url('/icon/triangle.svg');
+    }
+
+    &.cross {
+      background-image: url('/icon/cross.svg');
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: mixin.$whiteColor;
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+
+    &[aria-checked='true'] {
+      background-color: mixin.$ternaryColor;
+      border: 2px solid mixin.$ternaryColor;
+
+      &:hover {
+        background-color: mixin.$whiteColor;
+      }
+    }
+  }
+}
